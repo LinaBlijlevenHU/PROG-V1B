@@ -1,9 +1,5 @@
 def pythagoras(a, b):
-    'Bereken de lengte van een lange zijde met de stelling van Pythagoras
-    @param  int|float   Eerste korte zijde
-    @param  int|float   Tweede korte zijde
-    @return float       Lengte van de lange zijde
-    '
+    'Bereken de lengte van een lange zijde met de stelling van Pythagoras'
     # Bereken a^2 + b^2
     ab = a**2 + b**2
     # Neem daar de wortel van
