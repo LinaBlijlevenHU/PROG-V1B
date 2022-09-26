@@ -53,7 +53,7 @@ print(lijst)
 # bestaat de waarde voor de lijst alleen binnen de functie. Als je het resultaat print met deze functie
 # staat er dus nog steeds ['a', 'b', 'c'] in de lijst, deze is zelf niet aangepast.
 #
-# Voorbeeld:
+# Voorbeeld (fout):
 # def wijzig(lijst):
 #   lijst = ['d', 'e', 'f']
 
