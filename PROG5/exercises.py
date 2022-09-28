@@ -1,29 +1,72 @@
 #######
+# 5.1 #
+#######
+def opsommen(a, b, c):
+    return a + b + c
+
+a, b, c = 1, 2, 3
+#print(opsommen(a, b, c))
+
+#######
 # 5.2 #
 #######
-
-# Maak een lijst aan
-getallenlijst = [1, 2, 3, 4, 5, 2, 4, 6, 5]
-
-# Functie om lijstelementen bij elkaar op te tellen
+# Accumulator loop pattern (getallen)
 def opsommen(lijst):
 
-    # Som
+    # Integer om bij op te tellen
     som = 0
 
-    # Voor elk element in de lijst
-    for e in lijst:
-        # Tel het element op bij de totale som
-        som = som + e
+    # Voor elk getal in de lijst
+    for getal in lijst:
+        # Tel het huidige getal op bij de huidige som (+ voor optellen)
+        som += getal
 
+    # Geef de volledige som terug
     return som
 
-# Gebruik de ingebouwde sum methode
-def opsommen2(lijst):
-    return sum(lijst)
+lijst = [1, 2, 3, 4, 5, 6]
+print(opsommen(lijst))
 
-# Bereken de som
-#print(opsommen(getallenlijst))
+# Accumulator loop pattern (met letters/strings)
+def samenvoegen(lijst):
+
+    # Lege string om bij op te tellen
+    resultaat = ''
+
+    # Voor elke letter in de lijst
+    for letter in lijst:
+        # Voeg de huidige letter toe aan de resultaat string (+ voor concatenation)
+        resultaat += letter
+
+    # Geef de volledige string terug
+    return resultaat
+
+letterlijst = ['a', 'b', 'c', 'd']
+print(samenvoegen(letterlijst))             # abcd
+
+# Accumulator loop pattern (met lijst)
+def kwadratenlijst(lijst):
+    '''
+    Geef een lijst met kwadraten van de elementen in de input lijst terug.
+
+    @param  list    lijst met getallen
+    @param  list    lijst met kwadraten
+    '''
+
+    # Lege lijst om het resultaat bij te houden
+    resultaat = []
+
+    # Loop over alle getallen
+    for getal in lijst:
+
+        # Toevoegen van het kwadraat aan de lijst (append)
+        resultaat.append(getal**2)
+
+    # Geef het volledige resultaat terug
+    return resultaat
+
+getallenlijst = [1, 2, 3, 4, 5, 6]
+print(kwadratenlijst(getallenlijst))        # Gewenste output: [1, 4, 9, 16, 25, 36]
 
 #######
 # 5.6 #
