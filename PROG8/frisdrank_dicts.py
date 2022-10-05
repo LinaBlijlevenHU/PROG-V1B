@@ -1,36 +1,39 @@
-# Frisdrank-machine met lijsten
+# Frisdrank-machine met dictionaries
 # Voorbeeld uit de les van 05/10/2022
+
+def print_producten(producten):
+    '''
+    Print alle producten
+
+    :param  list    De lijst met producten
+    '''
+    for productnaam, prijs in producten.items():
+        print(f"{productnaam}: ${prijs}")
 
 def selecteer_product(producten, keuze):
     '''
     Checkt of een bepaald product in de bestaande producten staat
 
-    :param      list        Lijst met producten
+    :param      dict        Dictionary met producten
     :param      string      De keuze van de gebruiker
-    :return     mixed       Product (als lijst met eerst naam, dan prijs) of None
+    :return     mixed       Product dict of None
     '''
-    # Voor alle producten
-    for p in producten:
-
-        # Selecteer de productnaam
-        productnaam = p[0]
-
-        # Vergelijk case insensitive de productnaam met de keuze
-        # van de gebruiker
-        if keuze.lower() == productnaam.lower():
-            return p                                    #[productnaam, prijs]
-
-    # We hebben de hele lijst doorzocht, maar de keuze
-    # staat er niet in
-    return None
+    if (keuze in producten.keys()):
+        return {
+            'naam': keuze,
+            'prijs': producten[keuze]
+        }
+    else:
+        return None
 
 def kies_product(producten):
     '''
     Laat de gebruiker opnieuw selecteren tot we een geldig product hebben.
 
     :param  list    Lijst met producten
-    :return list    [Productnaam, prijs]
+    :return dict    Product (naam en prijs)
     '''
+
     # Zo lang we geen geldig product hebben
     while True:
         # Laat de gebruiker kiezen
@@ -46,22 +49,13 @@ def kies_product(producten):
             print("Sorry, dat product bestaat niet, kies opnieuw.")
             print_producten(producten)
 
-def print_producten(producten):
-    '''
-    Print alle producten
-
-    :param  list    De lijst met producten
-    '''
-    for product in producten:
-        print(f"{product[0]}: ${product[1]}")
-
-producten = [
-    ['Coca Cola', 1.00],
-    ['Fanta', 1.15],
-    ['Sprite', 0.90]
-]
+producten = {
+    'Coca Cola': 1.00,
+    'Fanta': 1.15,
+    'Sprite': 0.90
+}
 
 print("Hallo, welkom bij de frisdrankautomaat.")
 print_producten(producten)
 product = kies_product(producten)
-print(f"Je hebt {product} besteld.")
+print(f"Je hebt {product['naam']} besteld. Dit kost {product['prijs']}")
