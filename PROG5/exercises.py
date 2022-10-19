@@ -1,6 +1,8 @@
 #######
 # 5.1 #
 #######
+
+# Functie voor drie getallen (opsommen)
 def opsommen(a, b, c):
     return a + b + c
 
@@ -27,6 +29,23 @@ def opsommen(lijst):
 lijst = [1, 2, 3, 4, 5, 6]
 print(opsommen(lijst))
 
+# Accumulator loop pattern (vermenigvuldigen)
+def product(lijst):
+
+    # Integer om mee te vermenigvuldigen
+    prod = 1
+
+    # Voor elk getal in de lijst
+    for getal in lijst:
+        # Tel het huidige getal op bij de huidige som (+ voor optellen)
+        prod *= getal            # som = som * getal
+
+    # Geef de volledige som terug
+    return prod
+
+lijst = [1, 2, 3, 4, 5, 6]
+print(product(lijst))
+
 # Accumulator loop pattern (met letters/strings)
 def samenvoegen(lijst):
 
@@ -36,7 +55,8 @@ def samenvoegen(lijst):
     # Voor elke letter in de lijst
     for letter in lijst:
         # Voeg de huidige letter toe aan de resultaat string (+ voor concatenation)
-        resultaat += letter
+        resultaat += letter     # resultaat = resultaat + letter
+                                # (andersom) resultaat = letter + resultaat
 
     # Geef de volledige string terug
     return resultaat

@@ -13,3 +13,12 @@ def read_lockers(fname = "fa_testkluizen.txt"):
     return [line.strip("\n").split(';') for line in lines]
 
 print(read_lockers())
+
+lijst = [1, 2, 4, 65, 3, 3, 2, 7, 8]
+
+for getal in lijst:
+    print(getal)
+    if getal == 7:
+        print("gevonden!")
+        break
+
